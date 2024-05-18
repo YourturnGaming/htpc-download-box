@@ -1,6 +1,6 @@
 # HTPC Download Box
 
-Sonarr / Radarr / Jackett / NZBGet / Deluge / OpenVPN / Plex
+Sonarr / Radarr / Jackett / Sabnzbd / Deluge / OpenVPN / Plex
 
 TV shows and movies download, sort, with the desired quality and subtitles, behind a VPN (optional), ready to watch, in a beautiful media player.
 All automated.
@@ -29,7 +29,7 @@ All automated.
     - [Setup Jackett](#setup-jackett)
       - [Docker container](#docker-container-2)
       - [Configuration and usage](#configuration-and-usage)
-    - [Setup NZBGet](#setup-nzbget)
+    - [Setup NZBGet](#setup-nzbget) - needs to be updated
       - [Docker container](#docker-container-3)
       - [Configuration and usage](#configuration-and-usage)
     - [Setup Plex](#setup-plex)
