@@ -46,15 +46,16 @@ services:
     container_name: sabnzbd
     image: lscr.io/linuxserver/sabnzbd:latest
     restart: unless-stopped
-    network_mode: host
+    # network_mode: host # Cannot use 'host' if remapping ports
     environment:
       - PUID=${PUID} # default user id, defined in .env
       - PGID=${PGID} # default group id, defined in .env
       - TZ=${TZ} # timezone, defined in .env
     volumes:
-      - ${ROOT}/downloads:/downloads # download folder
-      - ${ROOT}/config/sabnzbd:/config # config files
-
+      - ${ROOT}/downloads:/data/downloads # main downloads folder for everything
+      - ${CONF_ROOT}/config/sabnzbd:/config # config file location
+    ports:
+      - 6789:8080 # Remap port for sabnzbd (usenet client) use old nzbget port
   sonarr:
     container_name: sonarr
     image: linuxserver/sonarr:latest
